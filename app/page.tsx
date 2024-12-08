@@ -16,7 +16,7 @@ export default function Home() {
   FluideCursor();
 
   return (
-    <main className="">
+    <main className="flex flex-col items-center">
       <div className="fixed top-0 left-0 z-1">
         <canvas id="fluid" className="w-screen h-screen" />
       </div>

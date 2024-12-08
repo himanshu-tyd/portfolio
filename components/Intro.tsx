@@ -4,10 +4,14 @@ import Image from "next/image";
 import React from "react";
 import pic from "@/public/profile.jpg";
 import { motion } from "motion/react";
+import Link from "next/link";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { FaXTwitter } from "react-icons/fa6";
+import { HiDownload } from "react-icons/hi";
 
 const Intro = () => {
   return (
-    <section className="z-10">
+    <section className="mb-28 max-w-[50rem] text-center sm:mb-0 z-10">
       <div className="flex-center-both">
         <motion.div
           className="relative"
@@ -39,16 +43,43 @@ const Intro = () => {
         </motion.div>
       </div>
 
-      <h1 className="text-center mt-10">
-      <span className="font-bold">Hello, I'm Himanshu.</span> I'm a{" "}
-<span className="font-bold">fresher</span> passionate about{" "}
-<span className="italic">web development</span>. I enjoy building{" "}
-<span className="italic">sites & apps</span> and exploring new{" "}
-<span className="underline">technologies</span>. My focus is{" "}
-<span className="font-bold">React (Next.js)</span> and creating intuitive{" "}
-<span className="italic">user experiences</span>.
+      <motion.p
+        className="mb-10 mt-4 px-4 text-2xl sm:text-4xl font-medium !leading-[1.5]"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <span className="font-bold">Hello, I'm Himanshu.</span> I'm a{" "}
+        <span className="font-bold">fresher</span> passionate about{" "}
+        <span className="italic">web development</span>. I enjoy building{" "}
+        <span className="italic">sites & apps</span> and exploring new{" "}
+        <span className="underline">technologies</span>. My focus is{" "}
+        <span className="font-bold">React (Next.js)</span> and creating
+        intuitive <span className="italic">user experiences</span>.
+      </motion.p>
 
-      </h1>
+      <motion.div className="flex items-center justify-center flex-col sm:flex-row gap-3 px-4 text-lg font-medium "
+      initial={{y:100 , opacity:0}}
+      animate={{y:0 ,opacity: 1 }}
+      transition={{delay:0.1}}
+      >
+        <Link
+          href="#contact"
+          className="bg-gray-900 text-white px-7 py-3 flex-center gap-2 rounded-full outline-non  active:scale-100 hover:bg-gray-950  hover:scale-110 duration-[0.3s] group "
+        >
+          Contact me here <BsArrowRight className="opacity-75 group-hover:translate-x-1 duration-100 ease-in-out" />
+        </Link>
+        <a className="bg-white px-7 py-3 flex-center gap-2 rounded-full cursor-pointe  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border  "
+        href="/CV.pdf" download={true}
+        >
+          Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 duration-[0.3s] ease-in-out" />{" "}
+        </a>
+        <a className="bg-white cursor-pointer p-4  flex-center rounded-full">
+          <BsLinkedin className="text-[16px]" />
+        </a>
+        <a className="bg-white cursor-pointer p-4  flex-center rounded-full">
+          <FaXTwitter className="text-[16px]" />
+        </a>
+      </motion.div>
     </section>
   );
 };
