@@ -5,6 +5,9 @@ import Image from "next/image";
 import fludeCursor from "@/hooks/useFluideCursor";
 import { useEffect } from "react";
 import Intro from "@/components/Intro";
+import SectionDevider from "@/components/sub-components/SectionDevider";
+import About from "@/components/About";
+import Project from "@/components/Project";
 
 export default function Home() {
   const FluideCursor = () => {
@@ -21,6 +24,9 @@ export default function Home() {
         <canvas id="fluid" className="w-screen h-screen" />
       </div>
       <Intro />
+      <SectionDevider/>
+      <About/>
+      <Project/>
     </main>
   );
 }

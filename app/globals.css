@@ -14,16 +14,16 @@ body:after {
   filter: invert(1);
 }
 
-.flex-center-both{
-  @apply flex items-center justify-center
+.flex-center-both {
+  @apply flex items-center justify-center;
 }
 
-.flex-between{
-  @apply flex justify-between
+.flex-between {
+  @apply flex justify-between;
 }
 
-.flex-center{
-  @apply flex items-center
+.flex-center {
+  @apply flex items-center;
 }
 
 .waving-hand {
@@ -34,6 +34,9 @@ body:after {
   display: inline-block;
 }
 
+.glassmorphism {
+  @apply border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur;
+}
 
 @keyframes wave-animation {
   0% {

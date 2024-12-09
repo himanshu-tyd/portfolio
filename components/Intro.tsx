@@ -11,7 +11,12 @@ import { HiDownload } from "react-icons/hi";
 
 const Intro = () => {
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0 z-10">
+    <section
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 z-10 scroll-mt-[100rem] "
+      id="home"
+    >
+      {/* hero image section */}
+
       <div className="flex-center-both">
         <motion.div
           className="relative"
@@ -43,7 +48,9 @@ const Intro = () => {
         </motion.div>
       </div>
 
-      <motion.p
+      {/* hero section text  */}
+
+      <motion.h1
         className="mb-10 mt-4 px-4 text-2xl sm:text-4xl font-medium !leading-[1.5]"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -55,31 +62,41 @@ const Intro = () => {
         <span className="underline">technologies</span>. My focus is{" "}
         <span className="font-bold">React (Next.js)</span> and creating
         intuitive <span className="italic">user experiences</span>.
-      </motion.p>
+      </motion.h1>
 
-      <motion.div className="flex items-center justify-center flex-col sm:flex-row gap-3 px-4 text-lg font-medium "
-      initial={{y:100 , opacity:0}}
-      animate={{y:0 ,opacity: 1 }}
-      transition={{delay:0.1}}
+            
+      <motion.div
+        className="flex items-center justify-center flex-col sm:flex-row gap-3 px-4 text-lg font-medium "
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.1 }}
       >
         <Link
           href="#contact"
           className="bg-gray-900 text-white px-7 py-3 flex-center gap-2 rounded-full outline-non  active:scale-100 hover:bg-gray-950  hover:scale-110 duration-[0.3s] group "
         >
-          Contact me here <BsArrowRight className="opacity-75 group-hover:translate-x-1 duration-100 ease-in-out" />
+          Contact me here{" "}
+          <BsArrowRight className="opacity-75 group-hover:translate-x-1 duration-100 ease-in-out" />
         </Link>
-        <a className="bg-white px-7 py-3 flex-center gap-2 rounded-full cursor-pointe  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border  "
-        href="/CV.pdf" download={true}
+        <a
+          className="bg-white px-7 py-3 flex-center gap-2 rounded-full cursor-pointe  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border  glassmorphism  "
+          href="/CV.pdf"
+          download={true}
         >
-          Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 duration-[0.3s] ease-in-out" />{" "}
+          Download CV{" "}
+          <HiDownload className="opacity-60 group-hover:translate-y-1 duration-[0.3s] ease-in-out" />{" "}
         </a>
-        <a className="bg-white cursor-pointer p-4  flex-center rounded-full">
-          <BsLinkedin className="text-[16px]" />
+
+        {/* icons sections  */}
+
+        <a className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border  ">
+          <BsLinkedin className="text-[16px]  opacity-70 group-hover:opacity-100 duration-[0.3s]" />
         </a>
-        <a className="bg-white cursor-pointer p-4  flex-center rounded-full">
-          <FaXTwitter className="text-[16px]" />
+        <a className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border ">
+          <FaXTwitter className="text-[16px] opacity-70 group-hover:opacity-100 duration-[0.3s] " />
         </a>
       </motion.div>
+
     </section>
   );
 };

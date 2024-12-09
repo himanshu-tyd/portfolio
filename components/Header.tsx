@@ -1,15 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
 import { links } from "@/lib/data";
 import Link from "next/link";
+import { useActiveSectionContext } from "@/context/ActiveSectionProvider";
 
 const Header = () => {
+  const { activeSection, setActiveSection } = useActiveSectionContext();
+
   return (
     <header className="z-[999] relative flex justify-center ">
       <motion.div
-        className="fixed w-full top-0  h-[4.5rem] rounded-none border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full "
+        className="fixed w-full top-0  h-[4.5rem] rounded-none border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.7rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full "
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       ></motion.div>
@@ -18,11 +21,32 @@ const Header = () => {
           {links.map((link) => (
             <motion.li
               key={link.name}
-              className="h-3/4 flex-center-both p-3 hover:text-gray-950 hover:duration-[0.4s] duration-75  "
+              className="h-3/4 flex-center-both relative "
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
-              <Link href={link.name}>{link.name}</Link>
+              <Link
+                href={link.hash}
+                className={`p-3  hover:duration-[0.4s] duration-75 ${
+                  activeSection === link.name
+                    ? "text-white"
+                    : "hover:text-gray-950"
+                }  `}
+                onClick={() => setActiveSection(link.name)}
+              >
+                {link.name === activeSection && (
+                  <motion.span
+                    className="bg-black rounded-full absolute inset-0 -z-10  "
+                    layoutId="activeSection"
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                    }}
+                  />
+                )}
+                {link.name}
+              </Link>
             </motion.li>
           ))}
         </ul>
