@@ -1,28 +1,41 @@
 "use client";
 
-import React, { useContext, useState , createContext} from "react";
+import React, { useContext, useState, createContext } from "react";
 import { links } from "@/lib/data";
+import { SectionNameType } from "@/lib/type";  // This wil give us types of section
 
 
-type SectionName = (typeof links)[number]["name"];
+
 
 interface activeSectionProviderProps {
   children: React.ReactNode;
 }
 
-type ContextType={
-  activeSection:SectionName,
-  setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>
-}
 
-const ActiveSectionContext = createContext<ContextType | null >(null);
+// types of context
+type ContextType = {
+  activeSection: SectionNameType;
+  setActiveSection: React.Dispatch<React.SetStateAction<SectionNameType>>;
+  TimeOfLastClick: number;
+  setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const ActiveSectionContext = createContext<ContextType | null>(null);
 
 const ActiveSectionProvider = ({ children }: activeSectionProviderProps) => {
+  const [activeSection, setActiveSection] = useState<SectionNameType>("Home"); //header state 
+  const [TimeOfLastClick, setTimeOfLastClick] = useState<number>(0); // We keep track of Cick on header for for setting activation section if for 1s then after that state is going to be changed
 
-  const [activeSection, setActiveSection] = useState<SectionName>("Home");
+  //context data
+  const context = {
+    activeSection,
+    setActiveSection,
+    TimeOfLastClick,
+    setTimeOfLastClick,
+  };
 
   return (
-    <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+    <ActiveSectionContext.Provider value={context}>
       {children}
     </ActiveSectionContext.Provider>
   );
@@ -31,11 +44,14 @@ const ActiveSectionProvider = ({ children }: activeSectionProviderProps) => {
 export default ActiveSectionProvider;
 
 
-export const useActiveSectionContext=()=>{
-  const context=  useContext(ActiveSectionContext)
-  if(context==null){
-    throw new Error('Use active setion must be used with an acitveSectionProvider')
+// this is return data of context
+export const useActiveSectionContext = () => {
+  const context = useContext(ActiveSectionContext);
+  if (context == null) {
+    throw new Error(
+      "Use active setion must be used with an acitveSectionProvider"
+    );
   }
 
-  return context
-}
+  return context;
+};

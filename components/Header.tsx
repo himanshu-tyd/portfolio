@@ -7,7 +7,8 @@ import Link from "next/link";
 import { useActiveSectionContext } from "@/context/ActiveSectionProvider";
 
 const Header = () => {
-  const { activeSection, setActiveSection } = useActiveSectionContext();
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
 
   return (
     <header className="z-[999] relative flex justify-center ">
@@ -32,7 +33,10 @@ const Header = () => {
                     ? "text-white"
                     : "hover:text-gray-950"
                 }  `}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setActiveSection(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name === activeSection && (
                   <motion.span

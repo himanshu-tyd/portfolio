@@ -1,17 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import pic from "@/public/profile.jpg";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiDownload } from "react-icons/hi";
+import { useActiveSectionContext } from "@/context/ActiveSectionProvider";
+import { useInView } from "react-intersection-observer";
+import useSectionView from "@/hooks/useInView";
 
 const Intro = () => {
+  const { ref } = useSectionView("Home", 0.5);
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
   return (
     <section
+      ref={ref}
       className="mb-28 max-w-[50rem] text-center sm:mb-0 z-10 scroll-mt-[100rem] "
       id="home"
     >
@@ -64,7 +71,6 @@ const Intro = () => {
         intuitive <span className="italic">user experiences</span>.
       </motion.h1>
 
-            
       <motion.div
         className="flex items-center justify-center flex-col sm:flex-row gap-3 px-4 text-lg font-medium "
         initial={{ y: 100, opacity: 0 }}
@@ -74,6 +80,10 @@ const Intro = () => {
         <Link
           href="#contact"
           className="bg-gray-900 text-white px-7 py-3 flex-center gap-2 rounded-full outline-non  active:scale-100 hover:bg-gray-950  hover:scale-110 duration-[0.3s] group "
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me here{" "}
           <BsArrowRight className="opacity-75 group-hover:translate-x-1 duration-100 ease-in-out" />
@@ -96,7 +106,6 @@ const Intro = () => {
           <FaXTwitter className="text-[16px] opacity-70 group-hover:opacity-100 duration-[0.3s] " />
         </a>
       </motion.div>
-
     </section>
   );
 };
