@@ -7,12 +7,14 @@ body:after {
   background-image: url("../public/grid.svg");
   z-index: 1;
   position: absolute;
+  color: white;
   width: 100%;
   height: 100%;
   top: 0;
   opacity: 0.5;
   filter: invert(1);
 }
+
 
 .flex-center-both {
   @apply flex items-center justify-center;
@@ -35,11 +37,11 @@ body:after {
 }
 
 .glassmorphism {
-  @apply border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur;
+  @apply bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-30 
 }
 
 .borderBlack {
-  @apply border border-opacity-70 active:border-opacity-100
+  @apply border active:border-black border-opacity-70 active:border-opacity-100
 }
 
 @keyframes wave-animation {

@@ -12,11 +12,11 @@ export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("email");
 
   if (!isValid(senderEmail, 200)) {
-    return {success:false , message: "Invalid sender email" };
+    return { success: false, message: "Invalid sender email" };
   }
 
   if (!isValid(message, 500)) {
-    return {success:false, message: "Invalid Message" };
+    return { success: false, message: "Invalid Message" };
   }
 
   const { data, error } = await resend.emails.send({
@@ -32,15 +32,19 @@ export const sendEmail = async (formData: FormData) => {
   });
 
   if (error) {
-    return {success:false , message: "Error while sending message", error: error.message };
+    return {
+      success: false,
+      message: "Error while sending message",
+      error: error.message,
+    };
   }
 
   if (!data) {
-    return {success:false, message: "Failed to get sender data" };
+    return { success: false, message: "Failed to get sender data" };
   }
 
   return {
-    success:true,
+    success: true,
     message:
       "Message sent successfully. I will get back to you as soon as possible.",
   };

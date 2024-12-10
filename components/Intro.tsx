@@ -79,7 +79,7 @@ const Intro = () => {
       >
         <Link
           href="#contact"
-          className="bg-gray-900 text-white px-7 py-3 flex-center gap-2 rounded-full outline-non  active:scale-100 hover:bg-gray-950  hover:scale-110 duration-[0.3s] group "
+          className="bg-gray-900 text-white px-7 py-3 flex-center gap-2 rounded-full outline-non  active:scale-100 hover:bg-gray-950 dark:bg-white dark:text-black  hover:scale-110 duration-[0.3s] group "
           onClick={() => {
             setActiveSection("Contact");
             setTimeOfLastClick(Date.now());
@@ -89,7 +89,7 @@ const Intro = () => {
           <BsArrowRight className="opacity-75 group-hover:translate-x-1 duration-100 ease-in-out" />
         </Link>
         <a
-          className="bg-white px-7 py-3 flex-center gap-2 rounded-full cursor-pointe  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border  glassmorphism  "
+          className="bg-white px-7 py-3 flex-center gap-2 rounded-full cursor-pointe  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border backdrop-blur-2xl  dark:text-white  dark:bg-black  "
           href="/CV.pdf"
           download={true}
         >
@@ -100,10 +100,10 @@ const Intro = () => {
         {/* icons sections  */}
 
         <a className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border  ">
-          <BsLinkedin className="text-[16px]  opacity-70 group-hover:opacity-100 duration-[0.3s]" />
+          <BsLinkedin className="text-[16px]  opacity-90 group-hover:opacity-100 duration-[0.3s] dark:text-black " />
         </a>
         <a className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border ">
-          <FaXTwitter className="text-[16px] opacity-70 group-hover:opacity-100 duration-[0.3s] " />
+          <FaXTwitter className="text-[16px] opacity-90 group-hover:opacity-100 duration-[0.3s] dark:text-black " />
         </a>
       </motion.div>
     </section>

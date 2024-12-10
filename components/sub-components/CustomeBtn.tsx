@@ -10,11 +10,11 @@ const CustomeBtn = () => {
   return (
     <button
       type="submit"
-      className="group flex-center-both gap-2 h-[3rem] w-[8rem] text-white bg-gray-950 rounded-full transition-all hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border disabled:scale-100 disabled:opacity-75 "
+      className="group flex-center-both gap-2 h-[3rem] w-[8rem] text-white bg-gray-950 rounded-full transition-all hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border disabled:scale-100 disabled:opacity-75 dark:bg-white dark:text-black "
       disabled={pending}
     >
       {pending ? (
-        <div className="h-5 w-5 animate-spin border-b-2 border-white rounded-full"></div>
+        <div className="h-5 w-5 animate-spin border-b-2 dark:border-black border-white rounded-full"></div>
       ) : (
         <>
           Submit{" "}

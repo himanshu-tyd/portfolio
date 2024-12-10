@@ -11,6 +11,7 @@ import Project from "@/components/Project";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const FluideCursor = () => {
@@ -22,7 +23,7 @@ export default function Home() {
   FluideCursor();
 
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center px-1">
       <div className="fixed top-0 left-0 z-1">
         <canvas id="fluid" className="w-screen h-screen" />
       </div>
@@ -33,6 +34,7 @@ export default function Home() {
       <Skills/>
       <Experience/>
       <Contact/>
+
     </main>
   );
 }
