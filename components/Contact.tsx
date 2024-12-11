@@ -10,6 +10,7 @@ import { toast } from "sonner";
 const Contact = () => {
   const { ref } = useSectionView("Contact", 0.5);
 
+
   return (
     <motion.section
       ref={ref}
@@ -36,8 +37,8 @@ const Contact = () => {
       </p>
 
       <form
-        className="flex flex-col mt-10"
-        action={async (formData: FormData) => {
+      //@ts-ignore
+        className="flex flex-col mt-10" action={async (formData: FormData) => {
           const { message ,success } = await sendEmail(formData);
           if(!success){
             return toast.error(message)

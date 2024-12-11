@@ -1,7 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
-import { isValid } from "./utils";
+import { isValid, getErrorMessage } from "./utils";
 import React from "react";
 import EmailTemplate from "@/email/EmailTemplate";
 
@@ -34,12 +34,11 @@ export const sendEmail = async (formData: FormData) => {
   if (error) {
     return {
       success: false,
-      message: "Error while sending message",
-      error: error.message,
+      message: getErrorMessage(error),
     };
   }
 
-  if (!data) {
+  if (data == null) {
     return { success: false, message: "Failed to get sender data" };
   }
 
