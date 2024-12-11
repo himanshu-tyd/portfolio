@@ -6,36 +6,13 @@ import sun from "@/public/sun.svg";
 import moon from "@/public/moon.svg";
 import { TbMoonStars } from "react-icons/tb";
 import { BsSun } from "react-icons/bs";
+import { useTheme } from "@/context/ThemeProvider";
 
-type Theme = "light" | "dark";
+
 
 const ThemeSwitch = () => {
-  const [theme, setTheme] = useState<Theme>("dark");
-
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
-    }
-  };
-
-  useEffect(() => {
-    const localTheme = localStorage.getItem("theme") as Theme | null;
-    if (localTheme) {
-      setTheme(localTheme);
-      if (localTheme == "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    } else if (window.matchMedia("(prefets-color-schema-dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
+    
+  const {toggleTheme ,theme}  = useTheme()
 
   return (
     <button

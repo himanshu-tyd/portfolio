@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 body:after {
   content: "";
   background-image: url("../public/grid.svg");
@@ -15,13 +17,16 @@ body:after {
   filter: invert(1);
 }
 
+html {
+  --line-color: #e5e7eb;
+}
+
+html.dark{
+  --line-color: rgba(255, 255, 255, 0.2);
+}
 
 .flex-center-both {
   @apply flex items-center justify-center;
-}
-
-.flex-between {
-  @apply flex justify-between;
 }
 
 .flex-center {
@@ -37,11 +42,11 @@ body:after {
 }
 
 .glassmorphism {
-  @apply bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-30 
+  @apply bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 rounded-lg
 }
 
 .borderBlack {
-  @apply border active:border-black border-opacity-70 active:border-opacity-100
+  @apply border active:border-black border-opacity-70 active:border-opacity-100;
 }
 
 @keyframes wave-animation {

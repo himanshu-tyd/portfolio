@@ -58,7 +58,7 @@ const Intro = () => {
       {/* hero section text  */}
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl sm:text-4xl font-medium !leading-[1.5]"
+        className="mb-10 mt-4 px-4 text-2xl sm:text-4xl font-medium leading-snug md:leading-relaxed"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -72,7 +72,7 @@ const Intro = () => {
       </motion.h1>
 
       <motion.div
-        className="flex items-center justify-center flex-col sm:flex-row gap-3 px-4 text-lg font-medium "
+        className="flex items-center justify-center flex-col sm:flex-row gap-3 px-4  text-sm md:text-lg font-medium "
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.1 }}
@@ -100,10 +100,10 @@ const Intro = () => {
         {/* icons sections  */}
 
         <a className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border  ">
-          <BsLinkedin className="text-[16px]  opacity-90 group-hover:opacity-100 duration-[0.3s] dark:text-black " />
+          <BsLinkedin className="text-xs md:text-sm  opacity-90 group-hover:opacity-100 duration-[0.3s] dark:text-black " />
         </a>
         <a className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border ">
-          <FaXTwitter className="text-[16px] opacity-90 group-hover:opacity-100 duration-[0.3s] dark:text-black " />
+          <FaXTwitter className="text-xs md:text-sm opacity-90 group-hover:opacity-100 duration-[0.3s] dark:text-black " />
         </a>
       </motion.div>
     </section>

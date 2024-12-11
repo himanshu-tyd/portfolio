@@ -27,7 +27,7 @@ const Contact = () => {
       }}
     >
       <SectionHeading>Contact me</SectionHeading>
-      <p className="text-gray-700 -mt-7 dark:text-white/60 ">
+      <p className="text-gray-700 -mt-7 dark:text-white/60 text-sm sm:text-lg  ">
         Please contact me directly at{" "}
         <a href="mailto:himanshutaviyad93@gmail.com" className="underline">
           code.himanshu@93gmail.com
@@ -49,7 +49,7 @@ const Contact = () => {
           type="email"
           name="email"
           placeholder="Your email"
-          className="h-14 borderBlack rounded-lg px-4  dark:bg-black dark:text-white "
+          className="h-12 sm:h-14 text-sm sm:text-lg borderBlack rounded-lg px-4  dark:bg-black/60 dark:focus:bg-black/100 dark:text-white oultine-none      "
           required
           maxLength={80}
         />
@@ -58,7 +58,7 @@ const Contact = () => {
           required
           maxLength={500}
           placeholder="Your message..."
-          className="min-h-52 my-3  borderBlack rounded-lg px-4 pt-4  dark:bg-black dark:text-white "
+          className="min-h-52 my-3 text-sm sm:text-lg   borderBlack rounded-lg px-4 pt-4   dark:bg-black/60 dark:focus:bg-black/100 dark:text-white outline-none "
         />
         <CustomeBtn />
       </form>
