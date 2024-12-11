@@ -39,11 +39,12 @@ const Experience = () => {
                 borderRight:isTheme ? "0.4rem solid #9ca3af" : '0.4rem solid rgba(255, 255,255, 0.5)' ,
               }}
               date={item.date}
+              dateClassName="lg:dark:text-white/95  "
               icon={item.icon}
               iconStyle={{
-                background:isTheme ?  "white" : 'black' ,
+                background:isTheme ?  "black" : 'white' ,
                 fontSize: "1.5rem",
-                color:isTheme  ? 'black' :  "white",
+                color:isTheme  ? 'white' :  "black",
 
               }}
             >

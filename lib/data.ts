@@ -5,7 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import { FaEarthAsia } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
-import { postivus, webchatapp } from "@/public/project-images";
+import { postivus, promptX, webchatapp } from "@/public/project-images";
 
 
 export const links = [
@@ -72,15 +72,13 @@ export const skillsData = [
   "Node.js",
   "Git",
   "Tailwind",
+  "Sass",
   "Prisma",
   "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
   "Express",
   "PostgreSQL",
   "Python",
-  "Django",
+  "Figma",
   "Framer Motion",
 ] as const;
 
@@ -105,39 +103,39 @@ export const projectsData = [
     ],
   },
   {
-    title: "rmtDev",
+    title: "WebChatApp",
     description:
-      "Job board for remote developer jobs. I was the front-end developer.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "A full-stack, real-time messaging application designed for seamless communication and a great user experience. 🌐💬",
+    tags: ["React", "MongoDB", "Node.js", "Tailwind", "Express"],
     imageUrl: webchatapp,
     links: [
       {
         name: "website",
-        href: "https://positivus-self.vercel.app/",
+        href: "https://webchatapp-5ap3.onrender.com/",
         icon: React.createElement(FaEarthAsia),
       },
       {
         name: "source",
-        href: "https://github.com/himanshu-tyd/positivus",
+        href: "https://github.com/himanshu-tyd/webchatapp",
         icon: React.createElement(FaGithub),
       },
     ],
   },
   {
-    title: "Word Analytics",
+    title: "Prompt-X",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+      "A platfrom where you can share you prompt's, Copy othere's prompts and use it.",
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+    imageUrl: promptX,
     links: [
       {
         name: "website",
-        href: "https://positivus-self.vercel.app/",
+        href: "https://prompt-x-psi.vercel.app/",
         icon: React.createElement(FaEarthAsia),
       },
       {
         name: "source",
-        href: "https://github.com/himanshu-tyd/positivus",
+        href: "https://github.com/himanshu-tyd/prompt-x",
         icon: React.createElement(FaGithub),
       },
     ],

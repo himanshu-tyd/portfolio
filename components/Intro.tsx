@@ -6,10 +6,9 @@ import pic from "@/public/profile.jpg";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaGithub } from "react-icons/fa6";
 import { HiDownload } from "react-icons/hi";
 import { useActiveSectionContext } from "@/context/ActiveSectionProvider";
-import { useInView } from "react-intersection-observer";
 import useSectionView from "@/hooks/useInView";
 
 const Intro = () => {
@@ -99,11 +98,14 @@ const Intro = () => {
 
         {/* icons sections  */}
 
-        <a className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border  ">
+        <a href="https://www.linkedin.com/in/himanshu-tyd/"  target="_blank"  className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border  ">
           <BsLinkedin className="text-xs md:text-sm  opacity-90 group-hover:opacity-100 duration-[0.3s] dark:text-black " />
         </a>
-        <a className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border ">
+        <a href="https://x.com/himanshu_tyd" target="_blank" className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border ">
           <FaXTwitter className="text-xs md:text-sm opacity-90 group-hover:opacity-100 duration-[0.3s] dark:text-black " />
+        </a>
+        <a href="https://github.com/himanshu-tyd"  target="_blank"  className="bg-white cursor-pointer p-4  flex-center rounded-full  hover:scale-110 duration-[0.3s] active:scale-100 outline-none group  border-black/10 border ">
+          <FaGithub className="text-xs md:text-sm opacity-90 group-hover:opacity-100 duration-[0.3s] dark:text-black " />
         </a>
       </motion.div>
     </section>

@@ -4,7 +4,7 @@ import { extractYear } from "@/lib/utils";
 const Footer = () => {
   return (
     <footer className="text-center mb-10 px-4 text-gray-500 z-20 dark:text-white/50 ">
-      <small className="text-small block  ">
+      <small className=" block  text-xs sm:text-sm ">
         &copy; {extractYear()} Himanshu. All rights reserved.
       </small>
       <p className="text-xs">

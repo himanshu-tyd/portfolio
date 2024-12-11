@@ -26,7 +26,7 @@ const Contact = () => {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>Get In Touch</SectionHeading>
       <p className="text-gray-700 -mt-7 dark:text-white/60 text-sm sm:text-lg  ">
         Please contact me directly at{" "}
         <a href="mailto:himanshutaviyad93@gmail.com" className="underline">
