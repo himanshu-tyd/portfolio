@@ -10,7 +10,7 @@ import ThemeContextProvider from "@/context/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Himanshu | Porfolio",
+  title: "Himanshu | Portfolio",
   description: "Himanshu Taviyad SDE",
 };
 
