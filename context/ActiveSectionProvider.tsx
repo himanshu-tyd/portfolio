@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useContext, useState, createContext } from "react";
-import { links } from "@/lib/data";
-import { SectionNameType } from "@/lib/type";  // This wil give us types of section
+import type { SectionNameType } from "@/lib/type";  // This wil give us types of section
 
 
 

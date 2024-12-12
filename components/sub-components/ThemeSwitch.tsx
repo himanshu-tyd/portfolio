@@ -1,18 +1,16 @@
 "use client";
 
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import sun from "@/public/sun.svg";
-import moon from "@/public/moon.svg";
+
+import React from "react";
 import { TbMoonStars } from "react-icons/tb";
 import { BsSun } from "react-icons/bs";
-import { useTheme } from "@/context/ThemeProvider";
+import { ThemeContextTypes, useTheme } from "@/context/ThemeProvider";
 
 
 
 const ThemeSwitch = () => {
     
-  const {toggleTheme ,theme}  = useTheme()
+  const {toggleTheme ,theme}  = useTheme() as ThemeContextTypes
 
   return (
     <button

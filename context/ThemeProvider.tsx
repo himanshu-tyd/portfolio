@@ -4,19 +4,23 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import type { ThemeType } from "@/lib/type";
 import { toast } from "sonner";
 
-interface ThemeProviderProps {
+
+interface themeProvideProps {  //theme props
   children: React.ReactNode;
 }
 
-type ThemeContextTypes = {
+
+export type ThemeContextTypes = {    //theme context types
   theme: ThemeType;
-  toggleTheme: ()=>void,
+  toggleTheme: () => void;
   setTheme: React.Dispatch<React.SetStateAction<ThemeType>>;
 };
+
+
 const ThemeContext = createContext<ThemeContextTypes | null>(null);
 
-const ThemeContextProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<ThemeType>("dark");
+const ThemeContextProvider = ({ children }: themeProvideProps) => {
+  const [theme, setTheme] = useState<ThemeType>(null); //intial state 
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -31,19 +35,23 @@ const ThemeContextProvider = ({ children }: ThemeProviderProps) => {
   };
 
   useEffect(() => {
-    const localTheme = localStorage.getItem("theme") as ThemeType | null;
-    if (localTheme) {
-      setTheme(localTheme);
+    const localTheme = localStorage.getItem("theme") as ThemeType  | null
+    if (localTheme!==null) {
       if (localTheme == "dark") {
+        setTheme('dark')
         document.documentElement.classList.add("dark");
       }
-    } else if (window.matchMedia("(prefets-color-schema-dark)").matches) {
+      setTheme(localTheme);
+    } else if (window.matchMedia("(prefers-color-schema:dark)").matches) {
+      console.log('medial match check ran')
       setTheme("dark");
       document.documentElement.classList.add("dark");
+    }else{
+      setTheme('light')
     }
   }, []);
 
-  const context = {
+  let context = {
     theme,
     toggleTheme,
     setTheme,
@@ -58,8 +66,9 @@ export default ThemeContextProvider;
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
+
   if (context == null) {
-     toast.info("falied to switch theme something get wrong");
+    return toast.info("falied to switch theme something get wrong");
   }
 
   return context;

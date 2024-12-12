@@ -1,12 +1,14 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-import wordanalyticsImg from "@/public/wordanalytics.png";
 import { FaEarthAsia } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
-import { postivus, promptX, webchatapp } from "@/public/project-images";
-
+import {
+  postivus,
+  promptX,
+  webchatapp,
+  nikeclone,
+  linkdify,
+} from "@/public/project-images";
+import { FaShopify } from "react-icons/fa";
 
 export const links = [
   {
@@ -37,28 +39,12 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Droppshiping",
+    location: "India, GJ",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
-  },
-  {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
-  },
-  {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+      "I worked as a self-employed e-commerce specialist, managing multiple Shopify stores and implementing strategies that led to a 50% increase in revenue. I also ran successful Facebook ad campaigns, boosting engagement and sales by 60% through targeted digital marketing efforts.",
+    icon: React.createElement(FaShopify),
+    date: "2020 - 2022",
   },
 ] as const;
 
@@ -105,7 +91,7 @@ export const projectsData = [
   {
     title: "WebChatApp",
     description:
-      "A full-stack, real-time messaging application designed for seamless communication and a great user experience. 🌐💬",
+      "A full-stack, real-time messaging application designed for seamless communication and a great user experience.",
     tags: ["React", "MongoDB", "Node.js", "Tailwind", "Express"],
     imageUrl: webchatapp,
     links: [
@@ -117,6 +103,25 @@ export const projectsData = [
       {
         name: "source",
         href: "https://github.com/himanshu-tyd/webchatapp",
+        icon: React.createElement(FaGithub),
+      },
+    ],
+  },
+  {
+    title: "Nike Clone",
+    description:
+      "Nike landing page features like image click intraction & fully responsive across all devices. ",
+    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    imageUrl: nikeclone,
+    links: [
+      {
+        name: "website",
+        href: "https://nike-clone-seven-rho.vercel.app/",
+        icon: React.createElement(FaEarthAsia),
+      },
+      {
+        name: "source",
+        href: "https://nike-clone-seven-rho.vercel.app/",
         icon: React.createElement(FaGithub),
       },
     ],
@@ -138,6 +143,25 @@ export const projectsData = [
         href: "https://github.com/himanshu-tyd/prompt-x",
         icon: React.createElement(FaGithub),
       },
+    ],
+  },
+  {
+    title: "Linkdify",
+    description:
+      "Linkdify is a tool that convet your linkedin profile into beautiful PDF. (work on it)",
+    tags: ["React", "Next.js", "jsPDF", "Tailwind", "Figma"],
+    imageUrl: linkdify,
+    links: [
+      // {
+      //   name: "website",
+      //   href: "https://prompt-x-psi.vercel.app/",
+      //   icon: React.createElement(FaEarthAsia),
+      // },
+      // {
+      //   name: "source",
+      //   href: "https://github.com/himanshu-tyd/prompt-x",
+      //   icon: React.createElement(FaGithub),
+      // },
     ],
   },
 ] as const;

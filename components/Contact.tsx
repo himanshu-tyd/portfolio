@@ -1,7 +1,6 @@
 import React from "react";
 import SectionHeading from "./sub-components/SectionHeading";
 import useSectionView from "@/hooks/useInView";
-import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "motion/react";
 import { sendEmail } from "@/lib/sendEmail";
 import CustomeBtn from "./sub-components/CustomeBtn";
@@ -30,7 +29,7 @@ const Contact = () => {
       <SectionHeading>Get In Touch</SectionHeading>
       <p className="text-gray-700 -mt-7 dark:text-white/60 text-sm sm:text-lg  ">
         Please contact me directly at{" "}
-        <a href="mailto:himanshutaviyad93@gmail.com" className="underline">
+        <a href="mailto:himanshutaviyad93@gmail.com" className="underline dark:hover:text-white/90 hover:text-darkSecondary ">
           code.himanshu@93gmail.com
         </a>{" "}
         or through this form.

@@ -7,13 +7,13 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import useSectionView from "@/hooks/useInView";
-import { useTheme } from "@/context/ThemeProvider";
+import { ThemeContextTypes, useTheme } from "@/context/ThemeProvider";
 
 const Experience = () => {
   const { ref } = useSectionView("Experience", 0.6);
-  const { theme } =useTheme()
+  const { theme } =useTheme() as ThemeContextTypes
 
-  const isTheme=theme==='light'
+  const isTheme=theme=='light'
 
   return (
     <section
