@@ -20,7 +20,7 @@ export type ThemeContextTypes = {    //theme context types
 const ThemeContext = createContext<ThemeContextTypes | null>(null);
 
 const ThemeContextProvider = ({ children }: themeProvideProps) => {
-  const [theme, setTheme] = useState<ThemeType>(null); //intial state 
+  const [theme, setTheme] = useState<ThemeType>('dark'); //intial state 
 
   const toggleTheme = () => {
     if (theme === "light") {
