@@ -14,7 +14,7 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      className="fixed z-30 bottom-5 right-5 h-[3rem] w-[3rem] bg-white flex-center-both rounded-full shadow-2xl backdrop-blur-[0.5rem] bg-opacity-80 border-opacity-40 border hover:scale-[1.15] active:scale-105 transition-all 
+      className="fixed z-50 bottom-5 right-5 h-[3rem] w-[3rem] bg-white flex-center-both rounded-full shadow-2xl backdrop-blur-[0.5rem] bg-opacity-80 border-opacity-40 border hover:scale-[1.15] active:scale-105 transition-all 
       dark:bg-black   "
       onClick={toggleTheme}
     >
