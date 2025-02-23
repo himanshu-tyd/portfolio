@@ -7,6 +7,8 @@ import {
   webchatapp,
   nikeclone,
   linkdify,
+  canvas100X,
+  zentry,
 } from "@/public/project-images";
 import { FaShopify } from "react-icons/fa";
 
@@ -108,6 +110,25 @@ export const projectsData = [
     ],
   },
   {
+    title: "100x-Canvas",
+    description:
+      "A colabrative white board where you can draw with your friends or colobrators in real time.",
+    tags: ["React", "Next.js", "SQL", "Tailwind", "Prisma" , "WebSocket" ,"Turborepo"],
+    imageUrl: canvas100X,
+    links: [
+      {
+        name: "website",
+        href: "https://100x-canvas.vercel.app/",
+        icon: React.createElement(FaEarthAsia),
+      },
+      {
+        name: "source",
+        href: "https://github.com/himanshu-tyd/100x-canvas",
+        icon: React.createElement(FaGithub),
+      },
+    ],
+  },
+  {
     title: "Nike Clone",
     description:
       "Nike landing page features like image click intraction & fully responsive across all devices. ",
@@ -162,6 +183,28 @@ export const projectsData = [
       //   href: "https://github.com/himanshu-tyd/prompt-x",
       //   icon: React.createElement(FaGithub),
       // },
+    ],
+  },
+
+ 
+
+  {
+    title: "Zentry",
+    description:
+      "A gaming website landing page, made with modern web tech for a great UI/UX experience.",
+    tags: ["React", "GSAP", "Tailwind", "Animation"],
+    imageUrl: zentry,
+    links: [
+      {
+        name: "website",
+        href: "https://zentry-games.vercel.app/",
+        icon: React.createElement(FaEarthAsia),
+      },
+      {
+        name: "source",
+        href: "https://github.com/himanshu-tyd/zentry-clone",
+        icon: React.createElement(FaGithub),
+      },
     ],
   },
 ] as const;
