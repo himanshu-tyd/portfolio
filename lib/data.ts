@@ -9,6 +9,7 @@ import {
   linkdify,
   canvas100X,
   zentry,
+  harmony
 } from "@/public/project-images";
 import { FaShopify } from "react-icons/fa";
 
@@ -71,6 +72,20 @@ export const skillsData = [
 ] as const;
 
 export const projectsData = [
+  {
+    title: "Harmony",
+    description:
+      "A modern deep-work productivity tool with Pomodoro sessions, ambient sounds, and immersive workspaces for a calm focus experience.",
+    tags: ["next.js", "express.js", "motion","tailwind",],
+    imageUrl: harmony,
+    links: [
+      {
+        name: "website",
+        href: "https://www.harmonyfocus.space/",
+        icon: React.createElement(FaEarthAsia),
+      },
+    ],
+  },
   {
     title: "Positivus",
     description:

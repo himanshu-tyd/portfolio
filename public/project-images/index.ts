@@ -5,6 +5,7 @@ import promptX from './prompt-x.png'
 import linkdify from './linkedify.png'
 import canvas100X from  "./100x-canvas.png"
 import zentry from "./zentry.png"
+import harmony from './harmony.png'
 
 
-export {postivus, nikeclone,webchatapp, promptX, linkdify , canvas100X , zentry}
+export {postivus, nikeclone,webchatapp, promptX, linkdify , canvas100X , zentry, harmony}
